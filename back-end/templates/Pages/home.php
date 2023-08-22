@@ -9,7 +9,7 @@
 
 <body>
   <div class=" text-center ">
-    <a href="..\php\CerrarSesion.php" class="btn btn-lg btn-danger">Salir modo admin</a>
+    <a href="..\php\CerrarSesion.php" class="btn btn-lg btn-danger">SALIR</a>
   </div>
   <div class="container mt-5">
     <div class="row">

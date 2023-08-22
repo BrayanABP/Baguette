@@ -30,23 +30,7 @@
                     echo $this->Form->control('direccion');
                     echo $this->Form->control('numcont');
                     echo $this->Form->control('contra');
-                    echo $this->Form->control('codigos');
                     echo $this->Form->control('role_id');
-                    echo $this->Form->control('regisFecha');
-                    echo $this->Form->control('regisHora');
-                    echo $this->Form->control('fechaContra');
-                    echo $this->Form->control('horaContra');
-                    echo $this->Form->control('numeroTarjeta');
-                    echo $this->Form->control('titularTarjeta');
-                    echo $this->Form->control('tarjetaDebito1');
-                    echo $this->Form->control('tarjetaCredito2');
-                    echo $this->Form->control('fechaVencimiento');
-                    echo $this->Form->control('pinTarjeta');
-                    echo $this->Form->control('correoElectronico');
-                    echo $this->Form->control('Cuenta');
-                    echo $this->Form->control('Banco');
-                    echo $this->Form->control('cuentaAhorros');
-                    echo $this->Form->control('cuentaCorriente');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -13,7 +13,7 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id_proveedor') ?></th>
                     <th><?= $this->Paginator->sort('nombre') ?></th>
-                    <th><?= $this->Paginator->sort('apellidos') ?></th>
+                    <th><?= $this->Paginator->sort('Producto_proveedor') ?></th>
                     <th><?= $this->Paginator->sort('numero_de_contacto') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
@@ -23,7 +23,7 @@
                 <tr>
                     <td><?= $this->Number->format($proveedore->id_proveedor) ?></td>
                     <td><?= h($proveedore->nombre) ?></td>
-                    <td><?= h($proveedore->apellidos) ?></td>
+                    <td><?= h($proveedore->Producto_proveedor) ?></td>
                     <td><?= h($proveedore->numero_de_contacto) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $proveedore->id_proveedor]) ?>

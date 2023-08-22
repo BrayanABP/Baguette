@@ -48,15 +48,6 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="menuInventarios" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Inventarios
-                </a>
-                <div class="dropdown-menu" aria-labelledby="menuInventarios">
-                    <?= $this->Html->link('Lista Inventarios', ['controller' => 'Inventarios', 'action' => 'index'], ['class' => 'dropdown-item']) ?>
-                    <?= $this->Html->link('Agregar Inventarios', ['controller' => 'Inventarios', 'action' => 'add'], ['class' => 'dropdown-item']) ?>
-                </div>
-            </li>
-            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="menuPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Pedidos
                 </a>
@@ -96,7 +87,7 @@
     </div>
 </nav>
 <div class="container text-center">
-        <?= $this->Html->link('Mi sitio', ['controller' => 'Pages', 'action' => 'index'], ['class' => 'fas fa-home mt-5 mb-5']) ?>
+        <?= $this->Html->link('INICIO', ['controller' => 'Pages', 'action' => 'index'], ['class' => 'fas fa-home mt-5 mb-5']) ?>
     </div>
     
     <main class="main">

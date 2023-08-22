@@ -50,11 +50,11 @@ class ClientesController extends AppController
         if ($this->request->is('post')) {
             $cliente = $this->Clientes->patchEntity($cliente, $this->request->getData());
             if ($this->Clientes->save($cliente)) {
-                $this->Flash->success(__('Se ha añadido el cliente.'));
+                $this->Flash->success(__('The cliente has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('No se ha podido añadir el cliente, inténtelo de nuevo.'));
+            $this->Flash->error(__('The cliente could not be saved. Please, try again.'));
         }
         $this->set(compact('cliente'));
     }
@@ -74,11 +74,11 @@ class ClientesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $cliente = $this->Clientes->patchEntity($cliente, $this->request->getData());
             if ($this->Clientes->save($cliente)) {
-                $this->Flash->success(__('Se ha editado el cliente.'));
+                $this->Flash->success(__('The cliente has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('No se ha podido editar el cliente, inténtelo de nuevo.'));
+            $this->Flash->error(__('The cliente could not be saved. Please, try again.'));
         }
         $this->set(compact('cliente'));
     }
@@ -95,14 +95,11 @@ class ClientesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $cliente = $this->Clientes->get($id);
         if ($this->Clientes->delete($cliente)) {
-            $this->Flash->success(__('Se ha eliminado el cliente.'));
+            $this->Flash->success(__('The cliente has been deleted.'));
         } else {
-            $this->Flash->error(__('No se ha podido eliminar el cliente, inténtelo de nuevo.'));
+            $this->Flash->error(__('The cliente could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);
-    }
-    public function home(){
-        $this->render ('/Pages/home');
     }
 }

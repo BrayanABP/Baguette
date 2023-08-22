@@ -18,7 +18,7 @@
                 <legend><?= __('Add Proveedore') ?></legend>
                 <?php
                     echo $this->Form->control('nombre');
-                    echo $this->Form->control('apellidos');
+                    echo $this->Form->control('Producto_proveedor');
                     echo $this->Form->control('numero_de_contacto');
                 ?>
             </fieldset>

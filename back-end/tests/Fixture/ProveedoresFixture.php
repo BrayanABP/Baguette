@@ -21,7 +21,7 @@ class ProveedoresFixture extends TestFixture
             [
                 'id_proveedor' => 1,
                 'nombre' => 'Lorem ipsum dolor sit amet',
-                'apellidos' => 'Lorem ipsum dolor sit amet',
+                'Producto_proveedor' => 'Lorem ipsum dolor sit amet',
                 'numero_de_contacto' => 'Lorem ipsum dolor ',
             ],
         ];

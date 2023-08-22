@@ -9,20 +9,20 @@
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
             <?= $this->Form->postLink(
-                __('Eliminar'),
+                __('Delete'),
                 ['action' => 'delete', $cliente->id],
-                ['confirm' => __('¿Estás seguro de que quieres eliminarlo {0}?', $cliente->id), 'class' => 'side-nav-item']
+                ['confirm' => __('Are you sure you want to delete # {0}?', $cliente->id), 'class' => 'side-nav-item']
             ) ?>
-            <?= $this->Html->link(__('Clientes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('List Clientes'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
-    <div class="column-responsive d-flex justify-content-center align-items-center">
-        <div class="clientes form content col-6 text-center">
+    <div class="column-responsive column-80">
+        <div class="clientes form content">
             <?= $this->Form->create($cliente) ?>
             <fieldset>
-                <legend><?= __('Editar Cliente') ?></legend>
+                <legend><?= __('Edit Cliente') ?></legend>
                 <?php
-                    echo $this->Form->control('tdoc', ['label'=> 'Tipo de documento' , 'class' => 'col-9 text-center']);
+                    echo $this->Form->control('tdoc');
                     echo $this->Form->control('ndocu');
                     echo $this->Form->control('nombre');
                     echo $this->Form->control('fnaci');
@@ -30,9 +30,26 @@
                     echo $this->Form->control('direccion');
                     echo $this->Form->control('numcont');
                     echo $this->Form->control('contra');
+                    echo $this->Form->control('codigos');
+                    echo $this->Form->control('role_id');
+                    echo $this->Form->control('regisFecha');
+                    echo $this->Form->control('regisHora');
+                    echo $this->Form->control('fechaContra');
+                    echo $this->Form->control('horaContra');
+                    echo $this->Form->control('numeroTarjeta');
+                    echo $this->Form->control('titularTarjeta');
+                    echo $this->Form->control('tarjetaDebito1');
+                    echo $this->Form->control('tarjetaCredito2');
+                    echo $this->Form->control('fechaVencimiento');
+                    echo $this->Form->control('pinTarjeta');
+                    echo $this->Form->control('correoElectronico');
+                    echo $this->Form->control('Cuenta');
+                    echo $this->Form->control('Banco');
+                    echo $this->Form->control('cuentaAhorros');
+                    echo $this->Form->control('cuentaCorriente');
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Guardar')) ?>
+            <?= $this->Form->button(__('Submit')) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

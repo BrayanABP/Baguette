@@ -10,7 +10,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id_proveedor
  * @property string $nombre
- * @property string $apellidos
+ * @property string $Producto_proveedor
  * @property string $numero_de_contacto
  */
 class Proveedore extends Entity
@@ -26,7 +26,7 @@ class Proveedore extends Entity
      */
     protected $_accessible = [
         'nombre' => true,
-        'apellidos' => true,
+        'Producto_proveedor' => true,
         'numero_de_contacto' => true,
     ];
 }

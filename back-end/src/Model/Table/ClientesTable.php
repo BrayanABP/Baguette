@@ -40,6 +40,10 @@ class ClientesTable extends Table
         $this->setTable('clientes');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Roles', [
+            'foreignKey' => 'role_id',
+        ]);
     }
 
     /**
@@ -92,10 +96,113 @@ class ClientesTable extends Table
             ->notEmptyString('numcont');
 
         $validator
-            ->integer('contra')
+            ->scalar('contra')
+            ->maxLength('contra', 11)
             ->requirePresence('contra', 'create')
             ->notEmptyString('contra');
 
+        $validator
+            ->integer('codigos')
+            ->requirePresence('codigos', 'create')
+            ->notEmptyString('codigos');
+
+        $validator
+            ->integer('role_id')
+            ->allowEmptyString('role_id');
+
+        $validator
+            ->date('regisFecha')
+            ->requirePresence('regisFecha', 'create')
+            ->notEmptyDate('regisFecha');
+
+        $validator
+            ->time('regisHora')
+            ->requirePresence('regisHora', 'create')
+            ->notEmptyTime('regisHora');
+
+        $validator
+            ->date('fechaContra')
+            ->requirePresence('fechaContra', 'create')
+            ->notEmptyDate('fechaContra');
+
+        $validator
+            ->time('horaContra')
+            ->requirePresence('horaContra', 'create')
+            ->notEmptyTime('horaContra');
+
+        $validator
+            ->integer('numeroTarjeta')
+            ->requirePresence('numeroTarjeta', 'create')
+            ->notEmptyString('numeroTarjeta');
+
+        $validator
+            ->scalar('titularTarjeta')
+            ->maxLength('titularTarjeta', 50)
+            ->requirePresence('titularTarjeta', 'create')
+            ->notEmptyString('titularTarjeta');
+
+        $validator
+            ->scalar('tarjetaDebito1')
+            ->maxLength('tarjetaDebito1', 7)
+            ->requirePresence('tarjetaDebito1', 'create')
+            ->notEmptyString('tarjetaDebito1');
+
+        $validator
+            ->scalar('tarjetaCredito2')
+            ->maxLength('tarjetaCredito2', 7)
+            ->requirePresence('tarjetaCredito2', 'create')
+            ->notEmptyString('tarjetaCredito2');
+
+        $validator
+            ->integer('fechaVencimiento')
+            ->requirePresence('fechaVencimiento', 'create')
+            ->notEmptyString('fechaVencimiento');
+
+        $validator
+            ->integer('pinTarjeta')
+            ->requirePresence('pinTarjeta', 'create')
+            ->notEmptyString('pinTarjeta');
+
+        $validator
+            ->scalar('correoElectronico')
+            ->maxLength('correoElectronico', 30)
+            ->requirePresence('correoElectronico', 'create')
+            ->notEmptyString('correoElectronico');
+
+        $validator
+            ->integer('Cuenta')
+            ->requirePresence('Cuenta', 'create')
+            ->notEmptyString('Cuenta');
+
+        $validator
+            ->integer('Banco')
+            ->requirePresence('Banco', 'create')
+            ->notEmptyString('Banco');
+
+        $validator
+            ->integer('cuentaAhorros')
+            ->requirePresence('cuentaAhorros', 'create')
+            ->notEmptyString('cuentaAhorros');
+
+        $validator
+            ->integer('cuentaCorriente')
+            ->requirePresence('cuentaCorriente', 'create')
+            ->notEmptyString('cuentaCorriente');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->existsIn('role_id', 'Roles'), ['errorField' => 'role_id']);
+
+        return $rules;
     }
 }

@@ -23,8 +23,8 @@
                     <td><?= h($proveedore->nombre) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Apellidos') ?></th>
-                    <td><?= h($proveedore->apellidos) ?></td>
+                    <th><?= __('Producto Proveedor') ?></th>
+                    <td><?= h($proveedore->Producto_proveedor) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Numero De Contacto') ?></th>

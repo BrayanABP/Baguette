@@ -57,10 +57,10 @@ class ProveedoresTable extends Table
             ->notEmptyString('nombre');
 
         $validator
-            ->scalar('apellidos')
-            ->maxLength('apellidos', 255)
-            ->requirePresence('apellidos', 'create')
-            ->notEmptyString('apellidos');
+            ->scalar('Producto_proveedor')
+            ->maxLength('Producto_proveedor', 50)
+            ->requirePresence('Producto_proveedor', 'create')
+            ->notEmptyString('Producto_proveedor');
 
         $validator
             ->scalar('numero_de_contacto')
